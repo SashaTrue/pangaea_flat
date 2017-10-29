@@ -31,15 +31,15 @@ Item
                     width:  minSize/2
                     height: minSize/2
                     radius: minSize/2
-                    color: ((index*10+nomRow)==main.presetNom)?"Red":devColor
-                    border.color: fonColor
+                    color: index==nomRow?"Salmon":devColor
+                    border.color: ((index*10+nomRow)==main.presetNom)?"Salmon":fonColor
                     border.width: 3
                     MouseArea
                     {
                         anchors.fill: parent
                         hoverEnabled: true
                         cursorShape: Qt.PointingHandCursor
-                        onClicked: _core.setValue("preset_change", nomRow+10*index)
+                        onClicked:{ _core.setValue("preset_change", nomRow+10*index); console.log("nomRow+10*index", nomRow+10*index);}
                         onEntered:
                         {
                         }
